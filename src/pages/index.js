@@ -5,8 +5,13 @@ import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
 // ...GatsbyImageSharpFluid
+
 const IndexPage = () => {
-  return <h2>home page</h2>
+  return (
+    <Layout>
+      <Hero showPerson />
+    </Layout>
+  )
 }
 
 export default IndexPage

@@ -9,11 +9,17 @@ import React from 'react'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
+import useToggleHook from '../hooks/useToggleHook';
+
 const Layout = ({ children }) => {
+  const [isOpen, toggleSidebar] = useToggleHook(false);
+  
   return (
     <>
-      <h2>layout component</h2>
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
